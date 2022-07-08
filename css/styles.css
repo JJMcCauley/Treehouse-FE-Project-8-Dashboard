@@ -1,0 +1,186 @@
+*{
+    box-sizing: border-box;
+    font-family: 'Finlandica', sans-serif;
+}
+
+#header {
+    width: 95%;
+    margin: auto;
+    max-width: 1340px;
+}
+#main {
+    width: 95%;
+    display: grid;
+    grid-template-columns: 1fr;
+    margin: auto;
+    justify-items: center;
+    max-width: 1340px;
+}
+
+.min-employee-card {
+    width: 95%;
+    height: 150px;
+    margin: 10px auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    border: 3px solid gainsboro;
+    border-radius: 15px;
+    max-width: 370px;
+    transition:
+        background-color .8s ease-out,
+        border .8s ease-out,
+        transform .8s ease-out; 
+    
+}
+
+.min-employee-card:hover {
+    background-color: rgba(233, 255, 32, 0.281);
+    border: 6px solid aqua;
+    transform: scale(1.1);
+}
+
+.min-profile-img-container {
+    width: 40%;
+    max-width: 75px;
+    height: 75px;
+    display: flex;
+}
+
+.min-profile-img {
+    max-width: 75px;
+    max-height: 75px;
+    border-radius: 50%;
+}
+
+.min-profile-info {
+    width: 55%;
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+h1 {
+    color: rgb(94, 94, 94);
+    margin: 15px;
+    font-size: 1.8em;
+    text-transform: uppercase;
+}
+
+p { 
+    color: rgb(143, 143, 143);
+    font-size: .7em;
+}
+
+h3 {
+    font-size: 1em;
+}
+
+h3 {
+    margin-bottom: 6px;
+}
+p {
+    margin: 3px 0;
+}
+
+body {
+    position: relative;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(100, 100, 100, 0.4)
+}
+
+.modal {
+    width: 375px;
+    margin: 15% auto auto;
+    position: relative;
+    text-align: center;
+    background: #fff;
+    border: 1px solid #778;
+    border-radius: 5px;
+    padding: 30px 20px;
+}
+
+.modal-close {
+    position: absolute;
+    right: 15px;
+    top: 5px;
+    cursor: pointer;
+}
+
+.avatar {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+}
+
+.hidden {
+    display: none;
+}
+
+    
+
+@media screen and (min-width: 768px) {
+    .min-employee-card {
+        margin: 10px 20px 20px 20px;
+    }
+    
+    #main {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .min-profile-img-container {
+        width: 40%;
+        max-width: 100px;
+        height: 100px;
+    }
+    
+    .min-profile-img {
+        max-width: 100px;
+        max-height: 100px;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    #main {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    .min-employee-card {
+        max-width: 500px;
+        height: 160px;
+    }
+
+    .min-profile-img-container {
+        width: 45%;
+        max-width: 130px;
+        height: 130px;
+    }
+    
+    .min-profile-img {
+        max-width: 130px;
+        max-height: 130px;
+    }
+    
+    .min-profile-info {
+        width: 55%;
+        height: 130px;
+    }
+
+    h3 {
+        font-size: 1.4em
+    }
+
+    p {
+        font-size: .9em;
+    }
+    
+}
+
