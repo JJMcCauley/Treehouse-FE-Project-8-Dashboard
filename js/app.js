@@ -1,5 +1,5 @@
 const mainDiv = document.getElementById('main');
-const employees = new Array;
+const employees = [];
 
 
 function fetchEmployeeData(url) {
@@ -10,9 +10,9 @@ function fetchEmployeeData(url) {
         const results = data.results;
         results.forEach(person => {
             const employee = createEmployee(person);
-            employees.push(employee)
-        })
-        createEmployeeCards()      
+            employees.push(employee);
+        });
+        createEmployeeCards();      
       })
       .catch(err => console.log('Looks like there was a problem.', err));
   }
@@ -59,9 +59,9 @@ function createEmployeeCards() {
                 <p>${employee.email}</p>
                 <p>${employee.location}</p>
             </div>
-        `
+        `;
         mainDiv.append(div);
-    })
+    });
 }
 
 function displayOverlay(employee, index) {
@@ -95,7 +95,7 @@ function displayOverlay(employee, index) {
 
 function removeOverlay() {
     const overlay = document.querySelector('.overlay');
-    mainDiv.removeChild(overlay)
+    mainDiv.removeChild(overlay);
 }
 
 function getUserInput() {
@@ -109,12 +109,12 @@ function compareText(userInput) {
     cards.forEach(card => {
         const textToMatch = card.id.toLowerCase();
         if(textToMatch.includes(userInput) !== true) {
-            card.style.display = 'none'
+            card.style.display = 'none';
         }
         else {
-            card.style.display = 'flex'
+            card.style.display = 'flex';
         }
-    })
+    });
 }
 
 mainDiv.addEventListener('click', e => {
@@ -131,7 +131,7 @@ mainDiv.addEventListener('click', e => {
         let index = parseInt(overlay.getAttribute('data-index'));
         removeOverlay();
         if (index < employees.length-1) {
-            index++
+            index++;
         }
         else {
             index = 0;
@@ -143,17 +143,17 @@ mainDiv.addEventListener('click', e => {
         let index = parseInt(overlay.getAttribute('data-index'));
         removeOverlay();
         if (index > 0) {
-            index--
+            index--;
         }
         else {
             index = employees.length-1;
         }
         displayOverlay(employees[index], index);
     }
-})
+});
 
 
-fetchEmployeeData('https://randomuser.me/api/?results=12')
+fetchEmployeeData('https://randomuser.me/api/?results=12');
 
 
 
