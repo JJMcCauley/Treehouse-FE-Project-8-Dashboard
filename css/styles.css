@@ -95,7 +95,8 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(100, 100, 100, 0.4)
+    background: rgba(100, 100, 100, 0.4);
+    height: 100vh;
 }
 
 .modal {
@@ -113,7 +114,20 @@ body {
     position: absolute;
     right: 15px;
     top: 5px;
+}
+
+.modal-close,
+.overlay-nav {
     cursor: pointer;
+    border: 1px solid #778;
+    background-color: whitesmoke;
+    transition: 
+        background-color .4s ease-out;
+}
+
+.modal-close:hover,
+.overlay-nav:hover {
+    background-color: rgb(159, 255, 255);
 }
 
 .avatar {
@@ -122,11 +136,38 @@ body {
     height: 150px;
 }
 
-.hidden {
-    display: none;
+.input {
+    display: flex;
+    height: 1.5em;
 }
 
-    
+.input input {
+    margin-left: 1em;
+}
+
+.overlay-nav {
+    position: absolute;
+    font-size: 5em;
+    display: flex;
+    height: 150px;
+    width: 80px;
+    align-items: center;
+    justify-content: center;
+}
+
+#nav-left {
+    top: 102px;
+    left: -80px;
+}
+
+#nav-right {
+    top: 102px;
+    right: -80px;
+}
+
+.modal-content * {
+    margin: 1em 0;
+}
 
 @media screen and (min-width: 768px) {
     .min-employee-card {
@@ -146,6 +187,10 @@ body {
     .min-profile-img {
         max-width: 100px;
         max-height: 100px;
+    }
+
+    .input input {
+        width: 400px;
     }
 }
 
@@ -180,6 +225,12 @@ body {
 
     p {
         font-size: .9em;
+    }
+
+    header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
     }
     
 }

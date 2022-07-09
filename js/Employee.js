@@ -1,5 +1,5 @@
 class Employee {
-    constructor(name = '', email = '', location = '', imgUrl = '', phone = '', street = '', dob = '') {
+    constructor(name = '', email = '', location = '', imgUrl = '', phone = '', street = '', dob = '', state = '', postCode = '') {
         this.name = name;
         this.email = email;
         this.location = location;
